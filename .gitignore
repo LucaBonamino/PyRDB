@@ -4,3 +4,5 @@ build
 src/PyRDB.egg-info
 
 **__pycache__**
+
+src/PyRDB/database/*
