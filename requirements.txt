@@ -1,1 +1,3 @@
 setuptools
+
+pydantic>1,<=2.11.4

@@ -1,14 +1,17 @@
 {
   "database_name": "PyDB",
-  "tables": [
-    {
+  "tables": {
+    "employers": {
       "table_name": "employers",
       "row_size": 64,
+      "struct_type": "i60s",
       "columns": [
         {
           "column_name": "id",
           "column_memory_offset": 0,
           "data_type": "integer",
+          "size": 4,
+          "struct_type": "i",
           "primary_key": true,
           "auto_increment": true
         },
@@ -16,11 +19,13 @@
           "column_name": "name",
           "column_memory_offset": 4,
           "data_type": "varchar",
+          "size": 60,
+          "struct_type": "i",
           "nullable": false
         }
       ]
     },
-    {
+    "employees": {
       "table_name": "employees",
       "row_size": 128,
       "columns": [
@@ -48,5 +53,5 @@
         }
       ]
     }
-  ]
+  }
 }
