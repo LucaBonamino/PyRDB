@@ -1,0 +1,52 @@
+{
+  "database_name": "PyDB",
+  "tables": [
+    {
+      "table_name": "employers",
+      "row_size": 64,
+      "columns": [
+        {
+          "column_name": "id",
+          "column_memory_offset": 0,
+          "data_type": "integer",
+          "primary_key": true,
+          "auto_increment": true
+        },
+        {
+          "column_name": "name",
+          "column_memory_offset": 4,
+          "data_type": "varchar",
+          "nullable": false
+        }
+      ]
+    },
+    {
+      "table_name": "employees",
+      "row_size": 128,
+      "columns": [
+        {
+          "column_name": "id",
+          "column_memory_offset": 0,
+          "data_type": "integer",
+          "primary_key": true,
+          "auto_increment": true
+        },
+        {
+          "column_name": "name",
+          "column_memory_offset": 4,
+          "data_type": "varchar",
+          "nullable": false
+        },
+        {
+          "column_name": "employer_id",
+          "column_memory_offset": 68,
+          "data_type": "integer",
+          "nullable": false,
+          "foreign_key": {
+            "references": "employers.id"
+          }
+        }
+      ]
+    }
+  ]
+}
