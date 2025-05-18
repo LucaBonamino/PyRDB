@@ -20,5 +20,7 @@ A toy relational-database engine in Python, built to learn how RDBMS internals w
 - Support join operations  
 - Build a TCP-socket server with:
   - Event listener  
-  - SQL-text parser  
+  - SQL-text parser
+  - Client authentication
 - Develop a minimal web client interface
+- Require authentication before quering
