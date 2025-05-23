@@ -9,8 +9,6 @@ class Column(pydantic.BaseModel):
     data_type: str
     size: int
     struct_type: str
-    primary_key: Optional[bool] = None
-    auto_increment: Optional[bool] = None
     nullable: Optional[bool] = None
 
 class ForeignKey(pydantic.BaseModel):
@@ -21,4 +19,3 @@ class Table(pydantic.BaseModel):
     row_size: int
     struct_type: str
     columns: List[Column]
-    foreign_key: Optional[ForeignKey] = None

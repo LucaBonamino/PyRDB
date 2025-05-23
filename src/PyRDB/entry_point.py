@@ -13,11 +13,13 @@ employees = [
 
 def fill_db_with_dummy_data():
     DBQuerier.insert_into("employers", employers)
-    # DBQuerier.insert_into("employees", employees)
+    DBQuerier.insert_into("employees", employees)
 
 def read_employers_table():
     data = DBQuerier.select_from("employers")
-    print(data)
+    print(f"employers: {data}")
+    data = DBQuerier.select_from("employers")
+    print(f"employees: {data}")
 
 if __name__ == '__main__':
     fill_db_with_dummy_data()

@@ -11,9 +11,7 @@
           "column_memory_offset": 0,
           "data_type": "integer",
           "size": 4,
-          "struct_type": "i",
-          "primary_key": true,
-          "auto_increment": true
+          "struct_type": "i"
         },
         {
           "column_name": "name",
@@ -28,30 +26,58 @@
     "employees": {
       "table_name": "employees",
       "row_size": 128,
+      "struct_type": "i60si",
       "columns": [
         {
           "column_name": "id",
           "column_memory_offset": 0,
           "data_type": "integer",
-          "primary_key": true,
-          "auto_increment": true
+          "size": 4,
+          "struct_type": "i"
         },
         {
           "column_name": "name",
           "column_memory_offset": 4,
           "data_type": "varchar",
-          "nullable": false
+          "nullable": false,
+          "size": 60,
+          "struct_type": "60s"
         },
         {
           "column_name": "employer_id",
           "column_memory_offset": 68,
           "data_type": "integer",
           "nullable": false,
-          "foreign_key": {
-            "references": "employers.id"
-          }
+          "size": 4,
+          "struct_type": "i"
         }
       ]
     }
+  },
+  "constraints": {
+    "primary_keys": {
+      "employer": [
+        "id"
+      ],
+      "employee": [
+        "id"
+      ]
+    },
+    "auto_increment": {
+      "employer": [
+        "id"
+      ],
+      "employee": [
+        "id"
+      ]
+    },
+    "foreign_key": [
+      {
+        "table": "employees",
+        "column": "employer_id",
+        "references": "employers.id",
+        "on_delete": "cascade"
+      }
+    ]
   }
 }

@@ -2,7 +2,6 @@ import json
 import struct
 from typing import List
 
-from PyRDB import settings
 from PyRDB.entities.schema import Table, Column
 from PyRDB.settings import DB_PATH, ROOT_PATH
 
