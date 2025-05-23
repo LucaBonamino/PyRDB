@@ -21,6 +21,16 @@ def read_employers_table():
     data = DBQuerier.select_from("employers")
     print(f"employees: {data}")
 
+
+def get_maximum_entries_per_leaf(page_size=4096):
+    number_of_header_bytes = 3
+    number_of_bytes_leaf_pointer = 8
+    number_of_bytes_per_entry = 4 + 8  # key + data_ptr
+
+    return (page_size - number_of_header_bytes - number_of_bytes_leaf_pointer) // number_of_bytes_per_entry
+
+
 if __name__ == '__main__':
-    fill_db_with_dummy_data()
-    read_employers_table()
+    # fill_db_with_dummy_data()
+    # read_employers_table()
+    print(get_maximum_entries_per_leaf())
